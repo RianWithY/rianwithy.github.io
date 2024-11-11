@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* reset css e troca de fonte com callback monospaced */
+* { 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu Mono', monospace;
+    font-weight: 400;
+}
+
+body {
+    background: #000000;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    margin: 0 auto;
+    padding: 1em;
+    width: 50%;
+}
+
+.dofilme {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    width: 100%;
+    max-height: 500px;
+}
+
+.dofilme img {
+    margin: 5% 0 0 5%;
+    border-radius: 15px;
+}
+
+#sinopse {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    /* border: 2px solid black; */
+    border-radius: 15px;
+    margin: 5% 5% 0 0;
+    width: 50%;
+    height: 90%;
+}
+
+h1, h2, #pontuacao, #question, #sinopse, #result {
+    /* background: #E5E5E5; */
+    color: #FCA311;
+    font-size: 1.5em;
+}
+
+#pontuacao, #question {
+    width: 100%;
+    text-align: center;
+}
+
+#mediaImage {
+    width: 300px;
+    height: 100px; /* Altura reduzida para mostrar a imagem cortada */
+    object-fit: cover; /* Ajusta a imagem dentro da área */
+    object-position: top; /* Mostra o topo da imagem inicialmente */
+    transition: height 0.5s ease; /* Animação ao mostrar a imagem completa */
+    /* box-shadow: rgba(251, 133, 0, 0.25) 0px 54px 55px, rgba(251, 133, 0, 0.12) 0px -12px 30px, rgba(251, 133, 0, 0.12) 0px 4px 6px, rgba(251, 133, 0, 0.17) 0px 12px 13px, rgba(251, 133, 0, 0.09) 0px -3px 5px; */
+    box-shadow: rgba(251, 133, 0, 0.5) 0px 1px 2px 0px, rgba(238, 129, 4, 0.3) 0px 1px 3px 1px;
+}
+
+#options {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    margin: 20px auto 0; 
+}
+
+#options>button{
+    padding: 1em;
+    background: #fb8500;
+    border-color: rgb(251, 133, 0);
+    width: 300px;
+    font-size: 1em;
+    text-align: center;
+    border-radius: 15px;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+#nextButton {
+    margin: 20px auto 0;
+    padding: 1em;
+    background: #fb8500;
+    width: 150px;
+    font-size: 1em;
+    text-align: center;
+    border-color: rgb(251, 133, 0);
+    border-radius: 15px;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+#options button:hover, #nextButton:hover{
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+#result {
+    text-align: center;
+}
+
+.texto {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.textresultado {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 1000px) {
+    
+    header{
+        display: none;
+    }
+
+    #pontuacao {
+        margin: 10px 0 0 0;
+    }
+    
+    #sinopse {
+        width: 0;
+        height: 0;
+        font-size: 0;
+    }
+
+    .texto {
+        margin: 0 auto;
+    }
+
+    #options {
+        margin: 10 auto 0;
+    }
+
+    #nextbutton {
+        width: 90px;
+    }
+}
